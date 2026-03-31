@@ -21,7 +21,7 @@ default: all
 all: xmrig/build/xmrig
 
 xmrig/build/xmrig: xmrig/scripts/deps/lib/libhwloc.a xmrig/scripts/deps/lib/libuv.a xmrig/scripts/deps/lib/libcrypto.a xmrig/scripts/deps/lib/libssl.a .xmrig-patched
-	env PATH=$(PREFIX)/bin:$(PATH) cmake -S xmrig -B xmrig/build -G Ninja \
+	env PATH=$(PREFIX)/bin:$(PATH) cmake -S xmrig -B xmrig/build \
 		-DCMAKE_SYSTEM_NAME=Linux \
 		-DCMAKE_SYSTEM_PROCESSOR=$(ARCH) \
 		-DCMAKE_C_COMPILER=$(PREFIX)-cc \
@@ -47,7 +47,7 @@ xmrig/build/xmrig: xmrig/scripts/deps/lib/libhwloc.a xmrig/scripts/deps/lib/libu
 		-DWITH_STRICT_CACHE=OFF \
 		-DWITH_VAES=OFF \
 		-DWITH_BENCHMARK=OFF
-	make -C xmrig/build $(MAKEOPTS)
+	env PATH=$(PREFIX)/bin:$(PATH) $(MAKE) -C xmrig/build $(MAKEOPTS)
 
 .xmrig-patched:
 	patch -Np1 -i openssl-cross-fix.patch
