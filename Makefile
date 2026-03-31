@@ -50,7 +50,7 @@ xmrig/build/xmrig: xmrig/scripts/deps/lib/libhwloc.a xmrig/scripts/deps/lib/libu
 	make -C xmrig/build $(MAKEOPTS)
 
 .xmrig-patched:
-	patch -Np1 -i xmrig-openssl-cross-compile-fix.patch
+	patch -Np1 -i openssl-cross-fix.patch
 	touch .xmrig-patched
 
 xmrig/scripts/deps/lib/libcrypto.a: libressl/crypto/.libs/libcrypto.a
