@@ -2,7 +2,7 @@
 
 This repo holds the Makefile to compile a statically linked xmrig program using a cross compiler toolchain.
 
-The patch held in this repo, `xmrig-openssl-cross-compile-fix.patch` makes sure that CMake does not pick up OpenSSL/LibreSSL link flags for the hosting build system.
+The patch held in this repo, `openssl-cross-fix.patch` makes sure that CMake does not pick up OpenSSL/LibreSSL link flags for the hosting build system.
 
 The environment variable `MAKEOPTS` can be set so that the dependencies and xmrig can be built quickly: `MAKEOPTS=-j18` for a 16-core build system.
 

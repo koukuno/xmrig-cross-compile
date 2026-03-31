@@ -1,0 +1,10 @@
+--- a/xmrig/cmake/OpenSSL.cmake	2026-03-30 17:06:25.224014605 -0700
++++ b/xmrig/cmake/OpenSSL.cmake	2026-03-30 17:06:47.152448544 -0700
+@@ -16,6 +16,7 @@
+ 
+ 
+     find_package(OpenSSL)
++    set(OPENSSL_LIBRARIES ${XMRIG_DEPS}/lib/libssl.a ${XMRIG_DEPS}/lib/libcrypto.a)
+ 
+     if (OPENSSL_FOUND)
+         set(TLS_SOURCES
