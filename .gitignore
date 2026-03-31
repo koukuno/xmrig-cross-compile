@@ -1,0 +1,11 @@
+hwloc*
+libressl*
+libuv*
+xmrig*
+*.tar.*
+*.t*
+*.zip
+*.asc
+*.sig
+SHA*
+.xmrig-patched
